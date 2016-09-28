@@ -1,3 +1,5 @@
+// implement Serializable when we need transfer the object
+
 package com.richasdy.HelloDatabase.model;
 
 public class User {

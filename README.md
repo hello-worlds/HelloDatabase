@@ -4,7 +4,8 @@ eclipse sample java code for databases
 ## Tools and Methods
 * Maven
 * JDBC
-* DAO
+* DAO (Data Access Object)
+* MySQL
 
 ## MySQL DDL
 ```js

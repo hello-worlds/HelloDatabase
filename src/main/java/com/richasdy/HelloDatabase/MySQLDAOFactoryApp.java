@@ -24,5 +24,10 @@ public class MySQLDAOFactoryApp {
 			System.out.println("User: [id : " + user.getId() + ", Name : " + user.getName() + ", Email : "
 					+ user.getEmail() + ", Password : " + user.getPassword() + " ]");
 		}
+		
+		for (User user : userDAO.getAllUser()) {
+			System.out.println("User: [id : " + user.getId() + ", Name : " + user.getName() + ", Email : "
+					+ user.getEmail() + ", Password : " + user.getPassword() + " ]");
+		}
 	}
 }

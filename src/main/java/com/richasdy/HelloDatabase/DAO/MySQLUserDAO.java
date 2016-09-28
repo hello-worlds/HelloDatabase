@@ -21,53 +21,53 @@ public class MySQLUserDAO implements UserDAO {
 	private Statement statement;
 
 	public List<User> getAllUser() {
-		
+
 		String query = "SELECT * FROM Users";
 		List<User> users = new LinkedList<User>();
 		ResultSet rs = null;
-		
+
 		try {
-			
+
 			connection = ConnectionFactory.getConnection();
 			statement = (Statement) connection.createStatement();
 			rs = statement.executeQuery(query);
-			
+
 			while (rs.next()) {
 				User user = new User();
-				
+
 				user.setId(rs.getInt("id"));
 				user.setName(rs.getString("name"));
 				user.setEmail(rs.getString("email"));
 				user.setPassword(rs.getString("password"));
-				
+
 				users.add(user);
-				
+
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally{
+		} finally {
 			DBUtil.close(rs);
 			DBUtil.close(statement);
 			DBUtil.close(connection);
 		}
 		
 		return users;
-		
+
 	}
 
-	public User getUser(int rollNo) {
+	public User getUser(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void updateUser(User student) {
+	public void updateUser(User user) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void deleteUser(User student) {
+	public void deleteUser(User user) {
 		// TODO Auto-generated method stub
 
 	}
