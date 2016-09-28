@@ -17,10 +17,11 @@ import com.richasdy.HelloDatabase.model.User;
 
 public class MySQLUserDAO implements UserDAO {
 
-	private Connection connection;
-	private Statement statement;
-
 	public List<User> getAllUser() {
+
+		// define here, so in can be close in finally
+		Connection connection = null;
+		Statement statement = null;
 
 		String query = "SELECT * FROM Users";
 		List<User> users = new LinkedList<User>();
@@ -52,7 +53,7 @@ public class MySQLUserDAO implements UserDAO {
 			DBUtil.close(statement);
 			DBUtil.close(connection);
 		}
-		
+
 		return users;
 
 	}
