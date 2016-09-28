@@ -1,3 +1,6 @@
+// DAO not using DAO factory
+// only using connection factory
+
 package com.richasdy.HelloDatabase;
 
 import com.richasdy.HelloDatabase.DAO.UserDAO;

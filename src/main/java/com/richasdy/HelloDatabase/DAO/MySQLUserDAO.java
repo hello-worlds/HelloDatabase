@@ -1,3 +1,7 @@
+// MySQLUserDAO class used by MySQLDAOApp
+// MySQLUserDAODoc class used by MySQLDAOFactoryApp
+// different in initialization
+
 package com.richasdy.HelloDatabase.DAO;
 
 import java.sql.ResultSet;

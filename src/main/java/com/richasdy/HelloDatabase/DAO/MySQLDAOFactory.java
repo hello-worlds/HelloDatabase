@@ -6,12 +6,12 @@ import java.sql.SQLException;
 import com.mysql.jdbc.Connection;
 
 public class MySQLDAOFactory extends DAOFactory {
-	
+
 	public static final String URL = "jdbc:mysql://localhost/hellojava";
 	public static final String USER = "root";
 	public static final String PASSWORD = "";
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
-	
+
 	// method to create mysql connections
 	public static Connection createConnection() {
 		// Use DRIVER and DBURL to create a connection
@@ -27,19 +27,20 @@ public class MySQLDAOFactory extends DAOFactory {
 	}
 
 	public UserDAO getUserDAO() {
-		
+
 		// MySQLUserDAO implements UserDAO
-		return new MySQLUserDAO();
-		
+		// Using MySQLUserDAODoc from oracle documentation
+		return new MySQLUserDAODoc();
+
 	}
 
-//	public AccountDAO getAccountDAO() {
-//		// CloudscapeAccountDAO implements AccountDAO
-//		return new CloudscapeAccountDAO();
-//	}
-//
-//	public OrderDAO getOrderDAO() {
-//		// CloudscapeOrderDAO implements OrderDAO
-//		return new CloudscapeOrderDAO();
-//	}
+	// public AccountDAO getAccountDAO() {
+	// // CloudscapeAccountDAO implements AccountDAO
+	// return new CloudscapeAccountDAO();
+	// }
+	//
+	// public OrderDAO getOrderDAO() {
+	// // CloudscapeOrderDAO implements OrderDAO
+	// return new CloudscapeOrderDAO();
+	// }
 }

@@ -1,3 +1,5 @@
+// DAO using DAO factory
+
 package com.richasdy.HelloDatabase;
 
 import java.util.List;
