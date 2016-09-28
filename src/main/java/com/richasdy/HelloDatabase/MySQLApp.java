@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
-public class AppMySQL {
+public class MySQLApp {
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost/hellojava";
@@ -26,9 +26,6 @@ public class AppMySQL {
 			// STEP 3: Open a connection
 			System.out.println("Connecting to database...");
 			conn = (Connection) DriverManager.getConnection(DB_URL, USER, PASS);
-			
-			System.out.println(conn.toString());
-			System.out.println(conn.getLogger());
 
 			// STEP 4: Execute a query
 			System.out.println("Creating statement...");
@@ -36,8 +33,7 @@ public class AppMySQL {
 			String sql;
 			sql = "SELECT id, name, email, password FROM Users";
 			ResultSet rs = stmt.executeQuery(sql);
-			
-			System.out.println(rs.toString());
+
 
 			// STEP 5: Extract data from result set
 			while (rs.next()) {

@@ -11,7 +11,7 @@ import com.richasdy.HelloDatabase.Util.ConnectionFactory;
 import com.richasdy.HelloDatabase.Util.DBUtil;
 import com.richasdy.HelloDatabase.model.User;
 
-public class UserDAOMySQL implements UserDAO {
+public class MySQLUserDAO implements UserDAO {
 
 	private Connection connection;
 	private Statement statement;
