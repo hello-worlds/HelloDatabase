@@ -15,9 +15,10 @@ import com.richasdy.HelloDatabase.Util.DBUtil;
 import com.richasdy.HelloDatabase.model.User;
 
 public class MySQLUserDAODoc implements UserDAO {
-
-	private Connection connection;
-	private Statement statement;
+	
+	// // for lazy load
+	// private Connection connection;
+	// private Statement statement;
 
 	// public MySQLUserDAODoc() {
 	// connection load in constructor, become lazy load
@@ -50,13 +51,13 @@ public class MySQLUserDAODoc implements UserDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		// // java below 1.7
 		// // need to close the resource (con, stat, rs) in finally
 		// try {
 		// // make connection every query
-		// connection = MySQLDAOFactory.createConnection();
-		// statement = (Statement) connection.createStatement();
+		// Connection connection = MySQLDAOFactory.createConnection();
+		// Statement statement = (Statement) connection.createStatement();
 		// ResultSet rs = statement.executeQuery(query);
 		//
 		// while (rs.next()) {
@@ -76,7 +77,7 @@ public class MySQLUserDAODoc implements UserDAO {
 		// } finally {
 		// // when these commented, its become lazy load
 		// // not good if we not connection not close
-		// // DBUtil.close(rs); // rs sutomatic close with statement
+		// // DBUtil.close(rs); // rs automatic close with statement
 		// DBUtil.close(statement);
 		// DBUtil.close(connection);
 		// }

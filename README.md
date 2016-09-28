@@ -5,6 +5,7 @@ eclipse sample java code for databases
 * Maven
 * JDBC
 * DAO (Data Access Object)
+* Factory
 * MySQL
 
 ## MySQL DDL

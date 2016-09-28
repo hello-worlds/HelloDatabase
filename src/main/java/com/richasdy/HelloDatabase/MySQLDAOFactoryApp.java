@@ -11,20 +11,26 @@ import com.richasdy.HelloDatabase.model.User;
 public class MySQLDAOFactoryApp {
 
 	public static void main(String[] args) {
-		
+
 		// create the required DAO Factory
-		DAOFactory mySQLDAOFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 		
+		// for more clear use
+		// DAOFactory mySQLDAOFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 		// Create a DAO
-		UserDAO userDAO = mySQLDAOFactory.getUserDAO();
+		// UserDAO userDAO = mySQLDAOFactory.getUserDAO();
 		
+		// for flexible use in programming
+		DAOFactory daofactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+		// Create a DAO
+		UserDAO userDAO = daofactory.getUserDAO();
+
 		// Find all user object.
 		List<User> userList = userDAO.getAllUser();
 		for (User user : userList) {
 			System.out.println("User: [id : " + user.getId() + ", Name : " + user.getName() + ", Email : "
 					+ user.getEmail() + ", Password : " + user.getPassword() + " ]");
 		}
-		
+
 		for (User user : userDAO.getAllUser()) {
 			System.out.println("User: [id : " + user.getId() + ", Name : " + user.getName() + ", Email : "
 					+ user.getEmail() + ", Password : " + user.getPassword() + " ]");
