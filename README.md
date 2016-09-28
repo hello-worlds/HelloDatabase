@@ -1,2 +1,2 @@
 # HelloDatabase
-sample java code for databases
+eclipse sample java code for databases
