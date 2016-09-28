@@ -1,6 +1,11 @@
 # HelloDatabase
 eclipse sample java code for databases
 
+## Tools and Methods
+* Maven
+* JDBC
+* DAO
+
 ## MySQL DDL
 ```js
 CREATE TABLE `users` (
