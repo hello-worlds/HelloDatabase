@@ -3,13 +3,17 @@
 
 package com.richasdy.HelloDatabase.DAO;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+// when use it, need to cast into 
+//import com.mysql.jdbc.Connection;
+//import com.mysql.jdbc.Statement;
+
 import com.richasdy.HelloDatabase.Util.ConnectionFactory;
 import com.richasdy.HelloDatabase.Util.DBUtil;
 import com.richasdy.HelloDatabase.model.User;
@@ -33,7 +37,7 @@ public class MySQLUserDAODoc implements UserDAO {
 		// try-with-resource, java 1.7 above.
 		// no need to close the resource (con, stat, rs)
 		try (Connection connection = MySQLDAOFactory.createConnection();
-				Statement statement = (Statement) connection.createStatement()) {
+				Statement statement = connection.createStatement()) {
 			try (ResultSet rs = statement.executeQuery(query)) {
 				// Do stuff with the result set.
 				while (rs.next()) {
@@ -57,7 +61,7 @@ public class MySQLUserDAODoc implements UserDAO {
 		// try {
 		// // make connection every query
 		// Connection connection = MySQLDAOFactory.createConnection();
-		// Statement statement = (Statement) connection.createStatement();
+		// Statement statement = connection.createStatement();
 		// ResultSet rs = statement.executeQuery(query);
 		//
 		// while (rs.next()) {

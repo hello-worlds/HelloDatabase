@@ -9,7 +9,7 @@ eclipse sample java code for databases
 * MySQL
 
 ## MySQL Connection
-File Connection Location
+Connection File Location
 ```java
 com.richasdy.HelloDatabase.Util.ConnectionFactory
 com.richasdy.HelloDatabase.DAO.MySQLDAOFactory

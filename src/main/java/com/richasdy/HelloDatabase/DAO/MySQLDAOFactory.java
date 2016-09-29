@@ -1,9 +1,11 @@
 package com.richasdy.HelloDatabase.DAO;
 
+//import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Connection;
+
 
 public class MySQLDAOFactory extends DAOFactory {
 
@@ -18,7 +20,7 @@ public class MySQLDAOFactory extends DAOFactory {
 		// Recommend connection pool implementation/usage
 		Connection connection = null;
 		try {
-			connection = (Connection) DriverManager.getConnection(URL, USER, PASSWORD);
+			connection = DriverManager.getConnection(URL, USER, PASSWORD);
 		} catch (SQLException e) {
 			System.out.println("ERROR: Unable to Connect to Database.");
 		}

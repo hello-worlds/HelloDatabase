@@ -13,16 +13,16 @@ public class MySQLDAOFactoryApp {
 	public static void main(String[] args) {
 
 		// create the required DAO Factory
-		
+
 		// for more clear use
-		// DAOFactory mySQLDAOFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+		DAOFactory mySQLDAOFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 		// Create a DAO
-		// UserDAO userDAO = mySQLDAOFactory.getUserDAO();
-		
-		// for flexible use in programming
-		DAOFactory daofactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+		UserDAO userDAO = mySQLDAOFactory.getUserDAO();
+
+		// for flexible use in programming, to change entire database
+		// DAOFactory daofactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 		// Create a DAO
-		UserDAO userDAO = daofactory.getUserDAO();
+		// UserDAO userDAO = daofactory.getUserDAO();
 
 		// Find all user object.
 		List<User> userList = userDAO.getAllUser();
